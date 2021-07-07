@@ -1,3 +1,4 @@
+
 const socket = io('http://192.168.0.112:8000');
 // import { io } from "socket.io-client";
 
@@ -113,20 +114,3 @@ socket.on('message',(data)=>{
 function scrollToBottom() {
     chat.scrollTop = chat.scrollHeight
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
