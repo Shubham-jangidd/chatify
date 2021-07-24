@@ -5,6 +5,10 @@ const mongoose= require('mongoose');
 const flash = require('connect-flash')
 const session = require('express-session')
 const passport = require('passport'); 
+
+// creating a socket.io server
+// listen all the incomming events
+
 const io = require('socket.io')(8000, {
   cors: {
     origin: '*',
@@ -15,11 +19,16 @@ const io = require('socket.io')(8000, {
 
 var users = {};
 
+// io.on is an sockect.io instance which will listen all the socket connection 
+
 io.on('connection', socket=>{
 
+  
+  //socket.on is taking an event and will manage a perticular connection
   socket.on("new-user-joined",(username)=>{
     users[socket.id] = username;
     console.log(users);
+    // broadcast will emmit the message to all the user except the user who joined
     socket.broadcast.emit('user-connected',username);
     io.emit("user-list",users);
   });
@@ -30,7 +39,9 @@ io.on('connection', socket=>{
     delete users[socket.id];
     io.emit("user-list",users);
       });
-  
+
+
+  //if some send messege boradcast it 
   socket.on('message',(data)=>{ 
     socket.broadcast.emit("message",{user:data.user , msg:data.msg})
   }); 
@@ -92,8 +103,12 @@ app.use((req, res, next)=>{
 app.use('/',require('./routes/index'))
 app.use('/users',require('./routes/users'))
 
-app.use(express.static('routes'));
+app.use(express.static('static'));
 // app.use('/chatify',require('./routes/style'))
+
+app.get('/activeUser', function (req, res) {
+  res.json({username: req.user.name})
+})
 
 
 

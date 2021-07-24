@@ -5,21 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Document</title>
     <script defer src="http://192.168.0.112:8000/socket.io/socket.io.js"></script>
+
     <script defer src="./client.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
-  <!-- script>
+  <script>
       src="https://code.jquery.com/jquery-3.3.1.js"
       integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-      crossorigin="anonymous">
+      crossorigin="anonymous"
   </script>
   <script>
     $(function()
     {
     $('#header').load('header.html'); 
      });
-   </script -->
- </head>
+   </script>
+</head>
+ 
  <body>
   <main>
     <header>
@@ -123,8 +125,12 @@
 </div>
 </div>
 </div>
-</main>
+<div>
+  
+  <a href="/users/logout" class="btn btn-secondary">Logout</a>
 
+</div>
+</main>
 <script>
 var uwindow = document.querySelector('.users-window')
 

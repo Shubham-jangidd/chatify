@@ -1,0 +1,148 @@
+ <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Document</title>
+    <script defer src="http://192.168.0.112:8000/socket.io/socket.io.js"></script>
+    <script defer src="./client.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+  <script>
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"
+  </script>
+//  <script>
+//    $(function()
+//    {
+//    $('#header').load('header.html'); 
+//     });
+//   </script>
+ </head>
+ <body>
+  <main>
+    <header>
+
+      <div class="title">
+        <img src="./images/unnamed.png" width="68px" alt="">
+        <h1>chatify</h1>
+      </div>
+
+      <div>
+        <button type="button" id="top" onclick="show_hide()">  
+          <img src="./images/list.svg" width="30px">
+        </button>
+      </div>
+
+    </header>
+
+    <!-- <div id="header"></div> -->
+  <!-- <div id="navebar">
+    
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">What's Chat</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form> 
+    </div>
+  </nav>
+  </div>
+-->
+
+<div class="beg">
+
+  <div class="container2">  
+    <div class="users-window">
+      <div class="users-head">
+        <h3>people</h3>
+        <h4 class="users-count">0</h4>
+      </div>
+
+      <div class="users-list">
+       
+      </div>
+    </div> 
+    <div class="chat-window">
+      <div class="chat">
+        <!-- <div class="container" > -->
+          <!-- 
+          <div class="message1 left">
+            <h5>shubham</h5> 
+            <p>hello good morning</p>
+          </div>    
+          <div class="message1 right">
+            <h5>jangid</h5>
+            <p>hey how are u</p>
+          </div> --> 
+    <!-- <h4 class="name">shubham</h4>
+    <p class="message right">hello</p>
+    <p class="message left">hello</p>
+    <p class="message center">hello</p>
+    --><!--  <div class="message right">hi</div>
+      <div class="message left">hello</div> -->
+    <!-- </div> -->
+    </div>
+
+    <div class="btn">
+     <!-- <form action="#" id="send-contaniner"> -->
+
+      <input type="text" name="messageInp" id="user-msg" placeholder="type here..." >
+
+      <button type="button" class="btn-warning" id="user-send">submit</button>
+
+      <!-- </form> -->
+    </div>
+</div>
+</div>
+</div>
+<div>
+  
+  <a href="/users/logout" class="btn btn-secondary">Logout</a>
+
+</div>
+</main>
+<script>
+var uwindow = document.querySelector('.users-window')
+
+function show_hide(){
+  if(uwindow.style.display=="block"){
+    uwindow.style.display="none";
+  }
+  else {
+        uwindow.style.display="block";
+      }
+
+
+  }  
+</script>
+
+</body>
+</html>

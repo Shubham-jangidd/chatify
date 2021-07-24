@@ -13,9 +13,9 @@ router.get('/dashboard',ensureAuthenticated, (req, res)=> res.render('dashboard'
 
 }));
 // chatify
-router.get('/chatify',ensureAuthenticated, (req, res)=> res.sendFile('/home/shubham/projects/web development/chat-project/auth/views/index.html',{
+router.get('/chatify',ensureAuthenticated, (req, res)=> res.render('index',{
 
-	name: req.user.name
+	// name: req.user.name
 
 }));
 
