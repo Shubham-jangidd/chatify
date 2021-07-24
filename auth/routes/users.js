@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router();
 const User = require('../models/User')
+const usermessage = require('../models/usermessage')
+
 const bcrypt = require('bcryptjs')
 const passport = require('passport'); 
 
@@ -53,7 +55,7 @@ if (errors.length > 0) {
       		email,
       		password
 		});
-		
+
 		bcrypt.genSalt(10,(err,salt)=> bcrypt.hash(newUser.password, salt, (err, hash)=>{
 
 			if (err) throw err;
@@ -88,6 +90,26 @@ passport.authenticate('local',{
 })(req, res, next);
 
 })
+
+
+router.post('/chatify', (req, res) => {
+
+const { sender, allmessage} = req.body;
+  
+  const newUserMessage = new usermessage({
+      sender,
+      allmessage
+    });
+  console.log("abc")
+
+  console.log(sender)
+  console.log(allmessage)
+  newUserMessage.save()
+
+});
+
+  console.log("sender")
+
 
 
 // logout handle

@@ -13,7 +13,7 @@ router.get('/dashboard',ensureAuthenticated, (req, res)=> res.render('dashboard'
 
 }));
 // chatify
-router.get('/chatify',ensureAuthenticated, (req, res)=> res.render('index',{
+router.get('/chatify',ensureAuthenticated, (req, res)=> res.render('chatify',{
 
 	// name: req.user.name
 

@@ -87,7 +87,7 @@ h4{
  color: red;
  font-weight: bold;
 }
-
+users-window
 .users-list p{
 	font-size: 16px;
 	font-weight: 600;
@@ -150,7 +150,7 @@ h4{
 	/*border: none;*/
 	/*outline: none;*/
 	letter-spacing: 0.5px;
-	border-radius: 0 50px 50px 0;	
+	/*border-radius: 0 50px 50px 0;	*/
 }
 
 .chat-window{
@@ -283,6 +283,26 @@ position: absolute;
 	}	
 	}*/
 
+#logout{
+
+font-size: 16px;
+	font-weight:bold;
+	/*border: 5px solid dotted;*/
+	/*border: none;*/
+	/*outline: none;*/
+	letter-spacing: 0.5px;
+	/*border-radius: 0 50px 50px 0;*/
+	padding: 7px;
+	    margin-left: 12px;
+	/*color: black;*/
+}	
+
+.navebutton{
+
+    display: inherit;
+
+}
+
 @media screen and (max-width: 800px){
 main{
 	width: 95%;
@@ -291,6 +311,24 @@ main{
 
 	display: block;
 }
+/*div.logout{
+
+position: relative;
+}
+
+#logout{
+
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    height: max-content;
+    z-index: 11;
+    /*box-shadow: 0 15px 20px -20px black;*/
+    /*padding-bottom: 0;*/
+    /*display: none;*/
+/*}*/
 
 div.container2{
 	position: relative;

@@ -20,6 +20,8 @@ var users_list=document.querySelector(".users-list")
 var users_count=document.querySelector(".users-count")
 var msg_snd=document.querySelector("#user-send");
 var user_msg=document.querySelector("#user-msg");
+var input = document.getElementById("user-msg");
+
 
 // const append = (message,)=>{
 // 	// console.log(messageelement);
@@ -225,8 +227,8 @@ function appendMessage(data,status){
 	let div=document.createElement('div');
 	div.classList.add('message1',status);
 	let content=`
-	<h5>${data.user}</h5>
-	<p>${data.msg}</p>
+	<h5 class="sender">${data.user}</h5>
+	<p class="allmessage">${data.msg}</p>
 	`;
 	div.innerHTML=content;
 	chat.appendChild(div);
@@ -235,6 +237,14 @@ function appendMessage(data,status){
 
 
 
+//button
+
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("user-send").click();
+  }
+});
 
 // function to scroll bottom in chat
 
